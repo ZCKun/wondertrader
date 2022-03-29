@@ -531,7 +531,7 @@ WTSOrdQueSlice* WtRdmDtReader::readOrdQueSliceByRange(const char* stdCode, uint6
 
 		uint32_t eIdx = pItem - rtBlock->_queues;
 
-		//如果光标定位的tick时间比目标时间打, 则全部回退一个
+		//如果光标定位的tick时间比目标时间大, 则全部回退一个
 		if (pItem->action_date > eTick.action_date || pItem->action_time > eTick.action_time)
 		{
 			pItem--;
@@ -704,7 +704,7 @@ WTSOrdDtlSlice* WtRdmDtReader::readOrdDtlSliceByRange(const char* stdCode, uint6
 
 		uint32_t eIdx = pItem - rtBlock->_details;
 
-		//如果光标定位的tick时间比目标时间打, 则全部回退一个
+		//如果光标定位的tick时间比目标时间大, 则全部回退一个
 		if (pItem->action_date > eTick.action_date || pItem->action_time > eTick.action_time)
 		{
 			pItem--;
@@ -876,7 +876,7 @@ WTSTransSlice* WtRdmDtReader::readTransSliceByRange(const char* stdCode, uint64_
 
 		uint32_t eIdx = pItem - rtBlock->_trans;
 
-		//如果光标定位的tick时间比目标时间打, 则全部回退一个
+		//如果光标定位的tick时间比目标时间大, 则全部回退一个
 		if (pItem->action_date > eTick.action_date || pItem->action_time > eTick.action_time)
 		{
 			pItem--;
