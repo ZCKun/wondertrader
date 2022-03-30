@@ -60,7 +60,7 @@ bool ActionPolicyMgr::init(const char* filename)
 					aRule._atype = AT_CloseYestoday;
 				else 
 				{
-					//WTSLogger::error("¿ªÆ½²ßÂÔ¼ÓÔØÊ§°Ü: Î´Ê¶±ğµÄ¿ªÆ½ÀàĞÍ%s", action);
+					//WTSLogger::error("å¼€å¹³ç­–ç•¥åŠ è½½å¤±è´¥: æœªè¯†åˆ«çš„å¼€å¹³ç±»å‹%s", action);
 					WTSLogger::error("Loading action policy failed: unrecognized type %s", action);
 					continue;
 				}
@@ -92,7 +92,7 @@ const ActionRuleGroup& ActionPolicyMgr::getActionRules(const char* pid)
 {
 	std::string gpName = "default";
 
-	{//ÏÈÕÒµ½Æ·ÖÖ¶ÔÓ¦µÄ¹æÔò×éÃû³Æ
+	{//å…ˆæ‰¾åˆ°å“ç§å¯¹åº”çš„è§„åˆ™ç»„åç§°
 		auto it = _comm_rule_map.find(pid);
 		if (it != _comm_rule_map.end())
 			gpName = it->second;
@@ -103,7 +103,7 @@ const ActionRuleGroup& ActionPolicyMgr::getActionRules(const char* pid)
 		if (it == _rules.end())
 		{
 			it = _rules.find("default");
-			//WTSLogger::error("¿ªÆ½¹æÔò×é%s²»´æÔÚ, ×Ô¶¯ÇĞ»»µ½Ä¬ÈÏ¹æÔò×é", gpName.c_str());
+			//WTSLogger::error("å¼€å¹³è§„åˆ™ç»„%sä¸å­˜åœ¨, è‡ªåŠ¨åˆ‡æ¢åˆ°é»˜è®¤è§„åˆ™ç»„", gpName.c_str());
 			WTSLogger::error("Action policy group %s not exists, changed to default group", gpName.c_str());
 		}
 
